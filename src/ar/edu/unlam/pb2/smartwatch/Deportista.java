@@ -1,5 +1,5 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-public class Deporte {
+public class Deportista {
 
 }
