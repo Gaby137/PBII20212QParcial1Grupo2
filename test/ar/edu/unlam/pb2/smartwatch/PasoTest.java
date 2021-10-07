@@ -26,6 +26,7 @@ public class PasoTest {
 
 	@Test
 	public void pruebaDeCadenciaYRealiza50Pasos() {
+
 		Paso p2 = new Paso(100);
 		for (int i = 0; i < 50; i++) {
 			p2.darPaso();
