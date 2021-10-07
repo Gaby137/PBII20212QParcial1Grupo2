@@ -1,6 +1,7 @@
 package ar.edu.unlam.pb2.smartwatch;
 
 public abstract class Sensor {
+	// la velocidad es metros/segundos
 	private double velocidad;
 	private double cadencia;
 	private int frecuenciaCardiaca;
@@ -24,17 +25,30 @@ public abstract class Sensor {
 		this.pulsoGPS = false;
 	}
 
-	public abstract void recibirUnPulso();
-
-	public abstract void recibirUnPulsoGPS();
-
 	public abstract double calcularVelocidad();
 
-	public abstract double calcularCadencia();
+	public double calcularCadencia() {
+//		como un pulso es un paso/brazada/pedaleo en un seg
+//		la cadencia es igual a cant de los mismo  por minuto
+		return this.cadencia;
+	}
 
 	public void darUnPulsoDeGPS() {
 		this.pulsoGPS = true;
 		this.metros++;
+	}
+
+	public void recibirUnPulso() {
+		if (this.isPulso()) {
+			this.tiempoSeg++;
+		}
+
+	}
+
+	public void recibirUnPulsoGPS() {
+		if (this.isPulsoGPS()) {
+			this.metros++;
+		}
 	}
 
 	public double getVelocidad() {
