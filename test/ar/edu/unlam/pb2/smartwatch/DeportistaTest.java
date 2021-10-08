@@ -12,22 +12,21 @@ import org.junit.Test;
 		
 		//preparacion 
 		Deportista usuario = new Deportista();
-		Paso paso = new Paso();
-		Paso dados=new Paso();
 		
-		paso.setCantPasos(10);
+		final Integer  PASOS_DE_PRUEBA=10;
+		
 		//valor esperado
 		
-		Double RESULTADO_ESPERADO=6.87;
+		final Double RESULTADO_ESPERADO=6.87;
 		
 		
 		//ejecucion 
 		
-		Double valorObtenido= usuario.distanciaRecorrida(paso);
+		Double valorObtenido= usuario.distanciaRecorrida(PASOS_DE_PRUEBA);
 		
 		//validacion 
 		
-		assertEquals(RESULTADO_ESPERADO, valorObtenido);
+		assertEquals(RESULTADO_ESPERADO, valorObtenido,0.01);
 		
 		
 	}

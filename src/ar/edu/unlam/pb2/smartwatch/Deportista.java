@@ -7,11 +7,10 @@ public class Deportista { //--> No puede ser abtracta porque el objerto se insta
 	private Double alturaActual;
 	private Integer pasosDiarios;
 	private Paso pasos;
-	private Double unPaso=0.687;
+	private final Double LONGITUD_DE_UN_PASO=0.687;//mts
 	protected Disciplina tipoDeDisciplina;
-	//private Double distEnCm= pasos*68.;
 	private Double distEnMts;
-	private Double distEnKms = distEnMts/1000;
+	//private Double distEnKms = distEnMts/1000;
 
 	public Deportista() {
 
@@ -27,9 +26,9 @@ public class Deportista { //--> No puede ser abtracta porque el objerto se insta
 		
 	}
 
-	public Double distanciaRecorrida(Paso paso) {
+	public Double distanciaRecorrida(Integer cantDePasos) {
 		
-		distEnMts=unPaso*pasos.getCantPasos();
+		distEnMts=cantDePasos*LONGITUD_DE_UN_PASO;
 		
 		return distEnMts ;
 	}
