@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.sensor;
 
 import static org.junit.Assert.fail;
 

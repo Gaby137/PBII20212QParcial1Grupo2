@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.sensor;
 
 public class Paso extends Sensor {
 	// Este numero representa la longitud de un paso promedio tanto para hombres

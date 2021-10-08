@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.sensor;
 
 public class Brazada extends Sensor {
 	private static final Integer LONGITUD_DE_BRAZADA = 1;

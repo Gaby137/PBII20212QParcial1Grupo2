@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.sensor;
 
 public class Pedaleo extends Sensor {
 	public static final Double LONGITUD_DE_PEDALEO_PROM = 0.89;

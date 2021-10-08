@@ -1,4 +1,4 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.deportista;
 
 public class ZonaDeFrecuenciaCardiaca {
 	private static final Double KARVONEN_220 = 220.0;
