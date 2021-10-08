@@ -7,6 +7,7 @@ public class Deportista {
 	private Double alturaActual;
 	private Integer pasosDiarios;
 	protected Disciplina tipoDeDisciplina;
+	private Double tiempoTranscurrido;
 
 	public Deportista() {
 
@@ -29,11 +30,14 @@ public class Deportista {
 		this.tipoDeDisciplina = tipoDeDisciplina;
 	}
 
-	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) {
+	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) { //esto devuelve la distancia en mts;
 		return cantidadMovimentos * longitud;
 	}
 
-	public void tiempoTrascurrido() {
+	public Double tiempoTrascurrido(Integer cantidadMovimientos) {
+		 tiempoTranscurrido=cantidadMovimientos/60D;
+			
+		 return  tiempoTranscurrido;
 
 	}
 
