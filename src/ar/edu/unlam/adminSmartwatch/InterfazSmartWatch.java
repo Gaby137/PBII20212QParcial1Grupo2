@@ -83,6 +83,6 @@ public class InterfazSmartWatch {
 		System.out.println("*****************************");
 		System.out.println("Ingrese una opcion");
 
-	} /*****/
+	} /*****/ /***/
 
 }
