@@ -34,4 +34,10 @@ public class Pedaleo extends Sensor {
 		this.cantDePedaleo = cantDePedaleo;
 	}
 
+	@Override
+	public void darUnPulsoDeGPS() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

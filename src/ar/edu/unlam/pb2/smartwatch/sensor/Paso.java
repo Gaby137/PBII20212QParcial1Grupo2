@@ -25,13 +25,17 @@ public class Paso extends Sensor {
 	}
 
 	@Override
-	public void recibirUnPulsoGPS() {
+	public void darUnPulsoDeGPS() {
 		Double m = 0.0;
 		Double s = 0.0;
+		setPulsoGPS(true);
 		if (super.isPulsoGPS()) {
 			m = super.getMetros();
 			m++;
 			super.setMetros(m);
+			s = super.getTiempoSeg();
+			s += (1 / LONGITUD_DE_UN_PASO);
+			super.setTiempoSeg(s);
 		}
 	}
 
@@ -55,4 +59,5 @@ public class Paso extends Sensor {
 	public Double getLongitudDeUnPaso() {
 		return this.LONGITUD_DE_UN_PASO;
 	}
+
 }

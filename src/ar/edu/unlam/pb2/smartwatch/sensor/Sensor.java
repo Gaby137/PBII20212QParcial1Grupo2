@@ -33,10 +33,7 @@ public abstract class Sensor {
 		return this.cadencia;
 	}
 
-	public void darUnPulsoDeGPS() {
-		this.pulsoGPS = true;
-		this.metros++;
-	}
+	public abstract void darUnPulsoDeGPS();
 
 	public void recibirUnPulso() {
 		if (this.isPulso()) {

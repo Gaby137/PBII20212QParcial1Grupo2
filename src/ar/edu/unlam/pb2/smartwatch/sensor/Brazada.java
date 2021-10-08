@@ -26,4 +26,10 @@ public class Brazada extends Sensor {
 		return resultado;
 	}
 
+	@Override
+	public void darUnPulsoDeGPS() {
+		// TODO Auto-generated method stub
+
+	}
+
 }

@@ -55,6 +55,8 @@ public class CorredorTest {
 			p3.darUnPulsoDeGPS();
 
 		}
+		Double resultadoEsperado = 1456.0407;
 
+		assertEquals(resultadoEsperado, p3.getTiempoSeg(), 0.01);
 	}
 }
