@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-public abstract class Deportista {
+public class Deportista {
 	private String nombre;
 	private Integer edadActual;
 	private Double pesoActual;
@@ -31,8 +31,8 @@ public abstract class Deportista {
 		this.tipoDeDisciplina = tipoDeDisciplina;
 	}
 
-	public Double distanciaRecorrida(double x) {
-		return 0.0;
+	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) {
+		return cantidadMovimentos * longitud;
 	}
 
 	public void tiempoTrascurrido() {
@@ -82,6 +82,4 @@ public abstract class Deportista {
 	public void setPasosDiarios(Integer pasosDiarios) {
 		this.pasosDiarios = pasosDiarios;
 	}
-
-
 }

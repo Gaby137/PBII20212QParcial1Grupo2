@@ -5,6 +5,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
+
 public class PasoTest {
 
 	@Test
@@ -20,7 +21,7 @@ public class PasoTest {
 		for (int i = 0; i < 60; i++) {
 			p2.darPaso();
 		}
-		assertEquals(p2.getCantPasos(), 60);
+		assertEquals(p2.getCantPasos(), 60,0);	
 		assertEquals(p2.getCadencia(), 60, 0);
 	}
 
@@ -32,7 +33,7 @@ public class PasoTest {
 			p2.darPaso();
 		}
 		assertEquals(p2.getCadencia(), 0, 0);
-		assertEquals(p2.getCantPasos(), 50);
+		assertEquals(p2.getCantPasos(), 50, 0);
 	}
 
 	@Test
@@ -40,6 +41,6 @@ public class PasoTest {
 		Paso p3 = new Paso(100);
 		p3.darUnPulsoDeGPS();
 		assertTrue(p3.isPulsoGPS());
-		assertEquals(p3.getMetros(), 1);
+		assertEquals(p3.getMetros(), 1, 0);
 	}
 }

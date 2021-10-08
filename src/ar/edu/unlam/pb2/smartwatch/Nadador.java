@@ -1,7 +1,6 @@
 package ar.edu.unlam.pb2.smartwatch;
 
 public class Nadador extends Deportista {
-	
 	public Nadador() {
 		super();
 	}
@@ -16,6 +15,4 @@ public class Nadador extends Deportista {
 		return 0.0;
 	}
 
-	
-	
 }
