@@ -2,22 +2,22 @@ package ar.edu.unlam.pb2.smartwatch;
 
 public abstract class Sensor {
 	// la velocidad es metros/segundos
-	private double velocidad;
-	private double cadencia;
-	private int frecuenciaCardiaca;
-	private int tiempoSeg;
-	private int metros;
-	private boolean pulso;
-	private boolean pulsoGPS;
+	private Double velocidad;
+	private Double cadencia;
+	private Integer frecuenciaCardiaca;
+	private Integer tiempoSeg;
+	private Integer metros;
+	private Boolean pulso;
+	private Boolean pulsoGPS;
 
 	public Sensor() {
 
 	}
 
-	public Sensor(int frecuenciaCardiaca) {
+	public Sensor(Integer frecuenciaCardiaca) {
 		super();
-		this.velocidad = 0;
-		this.cadencia = 0;
+		this.velocidad = 0.0;
+		this.cadencia = 0.0;
 		this.frecuenciaCardiaca = frecuenciaCardiaca;
 		this.tiempoSeg = 0;
 		this.metros = 0;
@@ -25,9 +25,9 @@ public abstract class Sensor {
 		this.pulsoGPS = false;
 	}
 
-	public abstract double calcularVelocidad();
+	public abstract Double calcularVelocidad();
 
-	public double calcularCadencia() {
+	public Double calcularCadencia() {
 //		como un pulso es un paso/brazada/pedaleo en un seg
 //		la cadencia es igual a cant de los mismo  por minuto
 		return this.cadencia;
@@ -51,59 +51,59 @@ public abstract class Sensor {
 		}
 	}
 
-	public double getVelocidad() {
+	public Double getVelocidad() {
 		return velocidad;
 	}
 
-	public void setVelocidad(double velocidad) {
+	public void setVelocidad(Double velocidad) {
 		this.velocidad = velocidad;
 	}
 
-	public double getCadencia() {
+	public Double getCadencia() {
 		return cadencia;
 	}
 
-	public void setCadencia(double cadencia) {
+	public void setCadencia(Double cadencia) {
 		this.cadencia = cadencia;
 	}
 
-	public int getFrecuenciaCardiaca() {
+	public Integer getFrecuenciaCardiaca() {
 		return frecuenciaCardiaca;
 	}
 
-	public void setFrecuenciaCardiaca(int frecuenciaCardiaca) {
+	public void setFrecuenciaCardiaca(Integer frecuenciaCardiaca) {
 		this.frecuenciaCardiaca = frecuenciaCardiaca;
 	}
 
-	public int getTiempoSeg() {
+	public Integer getTiempoSeg() {
 		return tiempoSeg;
 	}
 
-	public void setTiempoSeg(int tiempoSeg) {
+	public void setTiempoSeg(Integer tiempoSeg) {
 		this.tiempoSeg = tiempoSeg;
 	}
 
-	public int getMetros() {
+	public Integer getMetros() {
 		return metros;
 	}
 
-	public void setMetros(int metros) {
+	public void setMetros(Integer metros) {
 		this.metros = metros;
 	}
 
-	public boolean isPulso() {
+	public Boolean isPulso() {
 		return pulso;
 	}
 
-	public void setPulso(boolean pulso) {
+	public void setPulso(Boolean pulso) {
 		this.pulso = pulso;
 	}
 
-	public boolean isPulsoGPS() {
+	public Boolean isPulsoGPS() {
 		return pulsoGPS;
 	}
 
-	public void setPulsoGPS(boolean pulsoGPS) {
+	public void setPulsoGPS(Boolean pulsoGPS) {
 		this.pulsoGPS = pulsoGPS;
 	}
 

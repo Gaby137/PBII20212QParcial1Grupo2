@@ -1,40 +1,54 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-public abstract class Deportista {
+public class Deportista { //--> No puede ser abtracta porque el objerto se instancia 
 	private String nombre;
-	private int edadActual;
-	private double pesoActual;
-	private double alturaActual;
-	private int pasosDiarios;
+	private Integer  edadActual;
+	private Double pesoActual;
+	private Double alturaActual;
+	private Integer pasosDiarios;
+	private Paso pasos;
+	private final Double LONGITUD_DE_UN_PASO=0.687;//mts
 	protected Disciplina tipoDeDisciplina;
+	private Double distEnMts;
+	private Double tiempoTrancurrido;
+	//private Double distEnKms = distEnMts/1000; PRUEBA PRUEBA
 
 	public Deportista() {
 
 	}
 
-	public Deportista(String nombre, int edadActual, double pesoActual, double alturaActual, int pasosDiarios,
-			Disciplina tipoDeDisciplina) {
-		super();
+	public Deportista(String nombre, Integer edadActual, Double pesoActual, Double alturaActual) {
+
 		this.nombre = nombre;
 		this.edadActual = edadActual;
 		this.pesoActual = pesoActual;
 		this.alturaActual = alturaActual;
-		this.pasosDiarios = pasosDiarios;
-		this.tipoDeDisciplina = tipoDeDisciplina;
+		this.pasosDiarios =0;
+		
 	}
 
-	public double distanciaRecorrida(double x) {
+	public Double distanciaRecorrida(Integer cantDePasos) {
+		
+		distEnMts=cantDePasos*LONGITUD_DE_UN_PASO;
+		
+		return distEnMts ;
+	}
+
+	public void tiempoTrascurrido(Double velocidad) {
+		
+		
+
+	}
+
+	
+	
+	public Double calcularElRitmo() {
 		return 0.0;
 	}
 
-	public void tiempoTrascurrido() {
-
-	}
-
-	public double calcularElRitmo() {
-		return 0.0;
-	}
-
+	
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
@@ -47,32 +61,42 @@ public abstract class Deportista {
 		return edadActual;
 	}
 
-	public void setEdadActual(int edadActual) {
+	public void setEdadActual(Integer edadActual) {
 		this.edadActual = edadActual;
 	}
 
-	public double getPesoActual() {
+	public Double getPesoActual() {
 		return pesoActual;
 	}
 
-	public void setPesoActual(double pesoActual) {
+	public void setPesoActual(Double pesoActual) {
 		this.pesoActual = pesoActual;
 	}
 
-	public double getAlturaActual() {
+	public Double getAlturaActual() {
 		return alturaActual;
 	}
 
-	public void setAlturaActual(double alturaActual) {
+	public void setAlturaActual(Double alturaActual) {
 		this.alturaActual = alturaActual;
 	}
 
-	public int getPasosDiarios() {
+	public Integer getPasosDiarios() {
 		return pasosDiarios;
 	}
 
-	public void setPasosDiarios(int pasosDiarios) {
+	public void setPasosDiarios(Integer pasosDiarios) {
 		this.pasosDiarios = pasosDiarios;
 	}
+
+	public Disciplina getTipoDeDisciplina() {
+		return tipoDeDisciplina;
+	}
+
+	public void setTipoDeDisciplina(Disciplina tipoDeDisciplina) {
+		this.tipoDeDisciplina = tipoDeDisciplina;
+	}
+	
+	
 
 }
