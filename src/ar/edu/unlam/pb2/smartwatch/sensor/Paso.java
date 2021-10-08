@@ -4,15 +4,15 @@ public class Paso extends Sensor {
 	// Este numero representa la longitud de un paso promedio tanto para hombres
 	// como mujeres
 	public static final Double LONGITUD_DE_UN_PASO = 0.687;
-	private Integer cantPasos;
+	private Double cantPasos;
 
 	public Paso() {
 
 	}
 
-	public Paso(Integer frecuenciaCardiaca) {
+	public Paso(Double frecuenciaCardiaca) {
 		super(frecuenciaCardiaca);
-		this.cantPasos = 0;
+		this.cantPasos = 0.0;
 	}
 
 	public void darPaso() {
@@ -20,6 +20,18 @@ public class Paso extends Sensor {
 		cantPasos++;
 		if (cantPasos == 60) {
 			super.setCadencia(60D);
+		}
+		super.recibirUnPulso();
+	}
+
+	@Override
+	public void recibirUnPulsoGPS() {
+		Double m = 0.0;
+		Double s = 0.0;
+		if (super.isPulsoGPS()) {
+			m = super.getMetros();
+			m++;
+			super.setMetros(m);
 		}
 	}
 
@@ -32,11 +44,11 @@ public class Paso extends Sensor {
 		return resultado;
 	}
 
-	public Integer getCantPasos() {
+	public Double getCantPasos() {
 		return this.cantPasos;
 	}
 
-	public void setCantPasos(Integer cantPasos) {
+	public void setCantPasos(Double cantPasos) {
 		this.cantPasos = cantPasos;
 	}
 

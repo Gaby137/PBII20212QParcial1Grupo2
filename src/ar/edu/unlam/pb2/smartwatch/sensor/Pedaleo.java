@@ -2,11 +2,11 @@ package ar.edu.unlam.pb2.smartwatch.sensor;
 
 public class Pedaleo extends Sensor {
 	public static final Double LONGITUD_DE_PEDALEO_PROM = 0.89;
-	private Integer cantDePedaleo;
+	private Double cantDePedaleo;
 
-	public Pedaleo(Integer frencuenciaCardiaca) {
+	public Pedaleo(Double frencuenciaCardiaca) {
 		super(frencuenciaCardiaca);
-		this.cantDePedaleo = 0;
+		this.cantDePedaleo = 0.0;
 	}
 
 	public void darUnPedaleo() {
@@ -26,13 +26,12 @@ public class Pedaleo extends Sensor {
 		return resultado;
 	}
 
-	public Integer getCantDePedaleo() {
+	public Double getCantDePedaleo() {
 		return cantDePedaleo;
 	}
 
-	public void setCantDePedaleo(Integer cantDePedaleo) {
+	public void setCantDePedaleo(Double cantDePedaleo) {
 		this.cantDePedaleo = cantDePedaleo;
 	}
-	
 
 }

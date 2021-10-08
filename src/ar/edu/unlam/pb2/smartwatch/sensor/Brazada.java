@@ -4,7 +4,7 @@ public class Brazada extends Sensor {
 	private static final Integer LONGITUD_DE_BRAZADA = 1;
 	private Integer contBrazada;
 
-	public Brazada(Integer frecuenciaCardiaca) {
+	public Brazada(Double frecuenciaCardiaca) {
 		super(frecuenciaCardiaca);
 		this.contBrazada = 0;
 	}

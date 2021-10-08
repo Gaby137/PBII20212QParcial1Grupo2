@@ -29,12 +29,13 @@ public class Deportista {
 		this.tipoDeDisciplina = tipoDeDisciplina;
 	}
 
-	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) {
-		return cantidadMovimentos * longitud;
+	public Double distanciaRecorrida(Double double1, Double longitud) {
+		Double resultadoEnKm = (double1 * longitud) / 1000;
+		return resultadoEnKm;
 	}
 
-	public void tiempoTrascurrido() {
-
+	public Double tiempoTrascurrido(Double tiempoEnSeg) {
+		return tiempoEnSeg;
 	}
 
 	public Double calcularElRitmo() {
@@ -123,6 +124,5 @@ public class Deportista {
 			return false;
 		return true;
 	}
-	
-	
+
 }
