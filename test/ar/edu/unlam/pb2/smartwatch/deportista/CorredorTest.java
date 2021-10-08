@@ -10,11 +10,11 @@ public class CorredorTest {
 
 	/*
 	 * Los deportistas que sean corredores, desean conocer en tiempo real la
-	 * siguiente información: - Distancia recorrida (en kilómetros) - Tiempo
-	 * transcurrido - Ritmo (minutos que se demora en completar un kilómetro) - Zona
-	 * de frecuencia cardíaca actual (*) Obviamente para poder calcular la zona de
-	 * frecuencia cardíaca, será necesario conocer los límites de cada zona para el
-	 * corredor (ver detalle al pie).
+	 * siguiente información: // - Distancia recorrida (en kilómetros) // - Tiempo
+	 * transcurrido // - Ritmo (minutos que se demora en completar un kilómetro) //
+	 * - Zona de frecuencia cardíaca actual (*) Obviamente para poder calcular la
+	 * zona de frecuencia cardíaca, será necesario conocer los límites de cada zona
+	 * para el corredor (ver detalle al pie).
 	 */
 	@Test
 	public void comprobarLaDistanciaDelCorredor() {
@@ -55,8 +55,31 @@ public class CorredorTest {
 			p3.darUnPulsoDeGPS();
 
 		}
-		Double resultadoEsperado = 1456.0407;
+		Double resultadoEsperado = 1456.04;
 
-		assertEquals(resultadoEsperado, p3.getTiempoSeg(), 0.01);
+		assertEquals(resultadoEsperado, Math.round(p3.getTiempoSeg()), 0.1);
 	}
+
+	@Test
+	public void comprobarLaZonaCardiaca() {
+
+		Runner c1 = new Runner("corredor", 18, 70.0, 1.70);
+
+		Paso p4 = new Paso(170.0);
+
+		ZonaDeFrecuenciaCardiaca zonaEsperada = new ZonaDeFrecuenciaCardiaca(161.6, 181.8, TipoDeZona.UMBRAL);
+
+		ZonaDeFrecuenciaCardiaca zonaCalculada = c1.getZonaDeFrecuenciaCardiacaActual(p4.getFrecuenciaCardiaca());
+
+		assertEquals(zonaEsperada.getTipoZona(), zonaCalculada.getTipoZona());
+		assertEquals(zonaEsperada.getFrecuenciaCardiacaMin(),
+				Math.round(zonaCalculada.getFrecuenciaCardiacaMin() * 100.0) / 100.0, 0.1);
+
+		assertEquals(zonaEsperada.getFrecuenciaCardiacaMax(),
+				Math.round(zonaCalculada.getFrecuenciaCardiacaMax() * 100.0) / 100.0, 0.01);
+
+		assertEquals(zonaEsperada, zonaCalculada);
+
+	}
+
 }
