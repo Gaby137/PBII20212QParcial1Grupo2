@@ -14,7 +14,11 @@ public class ZonaDeFrecuenciaCardiaca {
 		this.tipoZona = tipoZona;
 	}
 
-	public Double calcularFrecuenciaCardiacaActual() {
+	public Double calcularZonaFrecuenciaCardiacaActual(Integer edad, Integer FrecuenciaCardiaca) {
+		Double FCMaxPersona = KARVONEN_220 * edad;
+
+//		60ppm - 50%  cambios hasta funcionando 
+
 		return 0.0;
 	}
 
