@@ -11,5 +11,6 @@ public class Caminador extends Deportista {
 		super(nombre, edadActual, pesoActual, alturaActual, pasosDiarios, tipoDeDisciplina);
 		setTipoDeDisciplina(Disciplina.CAMINATA);
 	}
+	
 
 }
