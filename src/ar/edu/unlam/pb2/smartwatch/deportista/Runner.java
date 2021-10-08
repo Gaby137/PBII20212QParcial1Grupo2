@@ -1,15 +1,19 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.deportista;
 
-public class Ciclista extends Deportista {
+public class Runner extends Deportista {
 	private ZonaDeFrecuenciaCardiaca zonaDeFrecuenciaCardiacaActual;
 
-	public Ciclista() {
+	public Runner() {
 		super();
 	}
 
-	public Ciclista(String nombre, Integer edadActual, Double pesoActual, Double alturaActual) {
+	public Runner(String nombre, Integer edadActual, Double pesoActual, Double alturaActual) {
 		super(nombre, edadActual, pesoActual, alturaActual);
-		setTipoDeDisciplina(Disciplina.CICLISMO);
+		setTipoDeDisciplina(Disciplina.CARRERA);
+	}
+
+	public Double ritmo() {
+		return 0.0;
 	}
 
 	public ZonaDeFrecuenciaCardiaca getZonaDeFrecuenciaCardiacaActual() {
@@ -20,11 +24,4 @@ public class Ciclista extends Deportista {
 		this.zonaDeFrecuenciaCardiacaActual = zonaDeFrecuenciaCardiacaActual;
 	}
 
-	public Double velocidad() {
-		return 0.0;
-	}
-	public Double cadencia() {
-		return 0.0;
-	}
-	
 }

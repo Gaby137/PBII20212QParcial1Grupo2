@@ -1,8 +1,10 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.deportista;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
+
+import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
 
 public class DeportistaTest {
 

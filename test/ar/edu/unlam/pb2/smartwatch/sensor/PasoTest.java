@@ -1,9 +1,11 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.sensor;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
+
+import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
 
 
 public class PasoTest {
