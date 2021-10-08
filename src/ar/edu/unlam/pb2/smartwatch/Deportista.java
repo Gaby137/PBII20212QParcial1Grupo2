@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-public abstract class Deportista {
+public class Deportista {
 	private String nombre;
 	private Integer edadActual;
 	private Double pesoActual;
@@ -82,6 +82,5 @@ public abstract class Deportista {
 	public void setPasosDiarios(Integer pasosDiarios) {
 		this.pasosDiarios = pasosDiarios;
 	}
-
 
 }
