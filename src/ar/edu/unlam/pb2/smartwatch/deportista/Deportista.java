@@ -12,15 +12,13 @@ public class Deportista {
 
 	}
 
-	public Deportista(String nombre, Integer edadActual, Double pesoActual, Double alturaActual, Integer pasosDiarios,
-			Disciplina tipoDeDisciplina) {
+	public Deportista(String nombre, Integer edadActual, Double pesoActual, Double alturaActual) {
 		super();
 		this.nombre = nombre;
 		this.edadActual = edadActual;
 		this.pesoActual = pesoActual;
 		this.alturaActual = alturaActual;
-		this.pasosDiarios = pasosDiarios;
-		this.tipoDeDisciplina = tipoDeDisciplina;
+		this.pasosDiarios = 0;
 	}
 
 	public Disciplina getTipoDeDisciplina() {

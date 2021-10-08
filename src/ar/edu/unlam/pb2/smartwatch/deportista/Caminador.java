@@ -6,9 +6,8 @@ public class Caminador extends Deportista {
 		super();
 	}
 
-	public Caminador(String nombre, Integer edadActual, Double pesoActual, Double alturaActual, Integer pasosDiarios,
-			Disciplina tipoDeDisciplina) {
-		super(nombre, edadActual, pesoActual, alturaActual, pasosDiarios, tipoDeDisciplina);
+	public Caminador(String nombre, Integer edadActual, Double pesoActual, Double alturaActual) {
+		super(nombre, edadActual, pesoActual, alturaActual);
 		setTipoDeDisciplina(Disciplina.CAMINATA);
 	}
 	
