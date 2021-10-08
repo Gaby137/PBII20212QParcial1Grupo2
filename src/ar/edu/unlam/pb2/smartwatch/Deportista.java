@@ -1,18 +1,18 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-public abstract class Deportista {
+public class Deportista {
 	private String nombre;
-	private int edadActual;
-	private double pesoActual;
-	private double alturaActual;
-	private int pasosDiarios;
+	private Integer edadActual;
+	private Double pesoActual;
+	private Double alturaActual;
+	private Integer pasosDiarios;
 	protected Disciplina tipoDeDisciplina;
 
 	public Deportista() {
 
 	}
 
-	public Deportista(String nombre, int edadActual, double pesoActual, double alturaActual, int pasosDiarios,
+	public Deportista(String nombre, Integer edadActual, Double pesoActual, Double alturaActual, Integer pasosDiarios,
 			Disciplina tipoDeDisciplina) {
 		super();
 		this.nombre = nombre;
@@ -23,7 +23,15 @@ public abstract class Deportista {
 		this.tipoDeDisciplina = tipoDeDisciplina;
 	}
 
-	public double distanciaRecorrida(double x) {
+	public Disciplina getTipoDeDisciplina() {
+		return tipoDeDisciplina;
+	}
+
+	public void setTipoDeDisciplina(Disciplina tipoDeDisciplina) {
+		this.tipoDeDisciplina = tipoDeDisciplina;
+	}
+
+	public Double distanciaRecorrida(double x) {
 		return 0.0;
 	}
 
@@ -31,7 +39,7 @@ public abstract class Deportista {
 
 	}
 
-	public double calcularElRitmo() {
+	public Double calcularElRitmo() {
 		return 0.0;
 	}
 
@@ -47,7 +55,7 @@ public abstract class Deportista {
 		return edadActual;
 	}
 
-	public void setEdadActual(int edadActual) {
+	public void setEdadActual(Integer edadActual) {
 		this.edadActual = edadActual;
 	}
 
@@ -55,7 +63,7 @@ public abstract class Deportista {
 		return pesoActual;
 	}
 
-	public void setPesoActual(double pesoActual) {
+	public void setPesoActual(Double pesoActual) {
 		this.pesoActual = pesoActual;
 	}
 
@@ -63,7 +71,7 @@ public abstract class Deportista {
 		return alturaActual;
 	}
 
-	public void setAlturaActual(double alturaActual) {
+	public void setAlturaActual(Double alturaActual) {
 		this.alturaActual = alturaActual;
 	}
 
@@ -71,7 +79,7 @@ public abstract class Deportista {
 		return pasosDiarios;
 	}
 
-	public void setPasosDiarios(int pasosDiarios) {
+	public void setPasosDiarios(Integer pasosDiarios) {
 		this.pasosDiarios = pasosDiarios;
 	}
 
