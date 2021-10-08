@@ -4,7 +4,6 @@ import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
-import ar.edu.unlam.pb2.smartwatch.deportista.Deportista;
 import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
 
 public class DeportistaTest {
