@@ -26,4 +26,5 @@ public class Ciclista extends Deportista {
 	public Double cadencia() {
 		return 0.0;
 	}
+	
 }

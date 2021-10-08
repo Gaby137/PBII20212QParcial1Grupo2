@@ -1,6 +1,6 @@
 package ar.edu.unlam.pb2.smartwatch.deportista;
 
-import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.*;
 
 import org.junit.Test;
 
@@ -32,6 +32,71 @@ public class DeportistaTest {
 		// validacion
 
 		assertEquals(RESULTADO_ESPERADO, valorObtenido, 0.01);
+
+	}
+
+	@Test
+	public void queSePuedaInstanciarUnCiclista() {
+
+		final String NOMBRE_ESPERADO = "Lance";
+		final Integer EDAD_ESPERADA = 35;
+		final Double PESO_ESPERADO = 75.80;
+		final Double ALTURA_ESPERADA = 177.4;
+		
+		Ciclista ciclista = new Ciclista(NOMBRE_ESPERADO, EDAD_ESPERADA, PESO_ESPERADO, ALTURA_ESPERADA);
+
+		assertEquals(NOMBRE_ESPERADO, ciclista.getNombre());
+		assertEquals(EDAD_ESPERADA, ciclista.getEdadActual(),0.0);
+		assertEquals(PESO_ESPERADO, ciclista.getPesoActual(),0.0);
+		assertEquals(ALTURA_ESPERADA, ciclista.getAlturaActual(),0.0);
+
+	}
+	@Test
+	public void queSePuedaInstanciarUnNadador() {
+
+		final String NOMBRE_ESPERADO = "Phelps";
+		final Integer EDAD_ESPERADA = 30;
+		final Double PESO_ESPERADO = 75.80;
+		final Double ALTURA_ESPERADA = 177.4;
+		
+		Nadador nadador = new Nadador(NOMBRE_ESPERADO, EDAD_ESPERADA, PESO_ESPERADO, ALTURA_ESPERADA);
+
+		assertEquals(NOMBRE_ESPERADO, nadador.getNombre());
+		assertEquals(EDAD_ESPERADA, nadador.getEdadActual(),0.0);
+		assertEquals(PESO_ESPERADO, nadador.getPesoActual(),0.0);
+		assertEquals(ALTURA_ESPERADA, nadador.getAlturaActual(),0.0);
+
+	}
+	@Test
+	public void queSePuedaInstanciarUnRunner() {
+
+		final String NOMBRE_ESPERADO = "Bolt";
+		final Integer EDAD_ESPERADA = 35;
+		final Double PESO_ESPERADO = 75.80;
+		final Double ALTURA_ESPERADA = 177.4;
+		
+		Runner runner = new Runner(NOMBRE_ESPERADO, EDAD_ESPERADA, PESO_ESPERADO, ALTURA_ESPERADA);
+
+		assertEquals(NOMBRE_ESPERADO, runner.getNombre());
+		assertEquals(EDAD_ESPERADA, runner.getEdadActual(),0.0);
+		assertEquals(PESO_ESPERADO, runner.getPesoActual(),0.0);
+		assertEquals(ALTURA_ESPERADA, runner.getAlturaActual(),0.0);
+
+	}
+	@Test
+	public void queSePuedaInstanciarUnCaminador() {
+
+		final String NOMBRE_ESPERADO = "Powell";
+		final Integer EDAD_ESPERADA = 35;
+		final Double PESO_ESPERADO = 75.80;
+		final Double ALTURA_ESPERADA = 177.4;
+		
+		Caminador caminador = new Caminador(NOMBRE_ESPERADO, EDAD_ESPERADA, PESO_ESPERADO, ALTURA_ESPERADA);
+
+		assertEquals(NOMBRE_ESPERADO, caminador.getNombre());
+		assertEquals(EDAD_ESPERADA, caminador.getEdadActual(),0.0);
+		assertEquals(PESO_ESPERADO, caminador.getPesoActual(),0.0);
+		assertEquals(ALTURA_ESPERADA, caminador.getAlturaActual(),0.0);
 
 	}
 
