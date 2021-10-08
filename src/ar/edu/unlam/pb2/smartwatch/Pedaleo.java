@@ -26,4 +26,13 @@ public class Pedaleo extends Sensor {
 		return resultado;
 	}
 
+	public Integer getCantDePedaleo() {
+		return cantDePedaleo;
+	}
+
+	public void setCantDePedaleo(Integer cantDePedaleo) {
+		this.cantDePedaleo = cantDePedaleo;
+	}
+	
+
 }
