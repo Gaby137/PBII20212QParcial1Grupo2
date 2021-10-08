@@ -10,7 +10,8 @@ public class Deportista { //--> No puede ser abtracta porque el objerto se insta
 	private final Double LONGITUD_DE_UN_PASO=0.687;//mts
 	protected Disciplina tipoDeDisciplina;
 	private Double distEnMts;
-	//private Double distEnKms = distEnMts/1000;
+	private Double tiempoTrancurrido;
+	//private Double distEnKms = distEnMts/1000; PRUEBA PRUEBA
 
 	public Deportista() {
 
@@ -33,14 +34,21 @@ public class Deportista { //--> No puede ser abtracta porque el objerto se insta
 		return distEnMts ;
 	}
 
-	public void tiempoTrascurrido() {
+	public void tiempoTrascurrido(Double velocidad) {
+		
+		
 
 	}
 
+	
+	
 	public Double calcularElRitmo() {
 		return 0.0;
 	}
 
+	
+	
+	
 	public String getNombre() {
 		return nombre;
 	}
