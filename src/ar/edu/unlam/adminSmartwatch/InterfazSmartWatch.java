@@ -1,6 +1,9 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.adminSmartwatch;
 
 import java.util.Scanner;
+
+import ar.edu.unlam.pb2.smartwatch.Deportista;
+import ar.edu.unlam.pb2.smartwatch.Disciplina;
 
 public class InterfazSmartWatch {
 
