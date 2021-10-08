@@ -1,12 +1,12 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-public abstract class Deportista {
+public abstract class Deportista { //main : Deportista =scr DesportistaTest=test;
 	private String nombre;
 	private int edadActual;
 	private double pesoActual;
 	private double alturaActual;
 	private int pasosDiarios;
-	protected Disciplina tipoDeDisciplina;
+	protected Disciplina tipoDeDisciplina;//comentario;
 
 	public Deportista() {
 
