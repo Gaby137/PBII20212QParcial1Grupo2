@@ -82,5 +82,4 @@ public class Deportista {
 	public void setPasosDiarios(Integer pasosDiarios) {
 		this.pasosDiarios = pasosDiarios;
 	}
-
 }
