@@ -1,14 +1,16 @@
 package ar.edu.unlam.pb2.smartwatch;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.Before;
 import org.junit.Test;
 
 public class PedaleoTest {
+	Pedaleo p1;
 
 	@Before
 	public void setUp() throws Exception {
+		p1 = new Pedaleo(140);
 	}
 
 	@Test
