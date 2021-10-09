@@ -47,6 +47,11 @@ public class Ciclista extends Deportista {
 	public void setZonaDeFrecuenciaCardiacaActual(ZonaDeFrecuenciaCardiaca zonaDeFrecuenciaCardiacaActual) {
 		this.zonaDeFrecuenciaCardiacaActual = zonaDeFrecuenciaCardiacaActual;
 	}
-
+	public Double velocidad() {
+		return 0.0;
+	}
+	public Double cadencia() {
+		return 0.0;
+	}
 	
 }

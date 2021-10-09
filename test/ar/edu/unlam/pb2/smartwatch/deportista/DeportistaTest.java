@@ -103,6 +103,22 @@ public class DeportistaTest {
 
 	}
 
-	
+	@Test
+	public void queSePuedaConocerLaDistanciaRecorridaDeUnCiclista() {
+		final Integer PEDALEOS = 20;
+		final Double PEDALEOS_KM = Pedaleo.LONGITUD_DE_PEDALEO_PROM / 1000;
+		final Double VALOR_ESPERADO = 0.0178;
+
+		Ciclista ciclista = new Ciclista("Lance", 35, 75.80, 177.4);
+
+		Pedaleo p1 = new Pedaleo(100);
+
+		for (int i = 0; i < PEDALEOS; i++) {
+			p1.darUnPedaleo();
+		}
+		Double valorObtenido = ciclista.distanciaRecorrida(p1.getCantDePedaleo(), PEDALEOS_KM);
+
+		assertEquals(VALOR_ESPERADO, valorObtenido);
+	}
 
 }

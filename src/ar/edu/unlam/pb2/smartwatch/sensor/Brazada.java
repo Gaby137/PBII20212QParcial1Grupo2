@@ -1,7 +1,7 @@
 package ar.edu.unlam.pb2.smartwatch.sensor;
 
 public class Brazada extends Sensor {
-	private static final Integer LONGITUD_DE_BRAZADA = 1;
+	public static final Double LONGITUD_DE_BRAZADA = 1D;
 	private Integer contBrazada;
 
 	public Brazada(Double frecuenciaCardiaca) {
@@ -26,10 +26,21 @@ public class Brazada extends Sensor {
 		return resultado;
 	}
 
+
+	public Integer getContBrazada() {
+		return contBrazada;
+	}
+
+	public void setContBrazada(Integer contBrazada) {
+		this.contBrazada = contBrazada;
+	}
+	
+
 	@Override
 	public void darUnPulsoDeGPS() {
 		// TODO Auto-generated method stub
 
 	}
+
 
 }

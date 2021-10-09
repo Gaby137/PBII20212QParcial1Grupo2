@@ -26,6 +26,7 @@ public class Pedaleo extends Sensor {
 		return resultado;
 	}
 
+
 	public Double getCantDePedaleo() {
 		return cantDePedaleo;
 	}
