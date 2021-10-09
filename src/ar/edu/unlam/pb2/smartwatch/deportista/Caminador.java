@@ -3,7 +3,8 @@ package ar.edu.unlam.pb2.smartwatch.deportista;
 public class Caminador extends Deportista {
 	
 	private Double distanciaEnKm;
-	private Double tiempoEnHora, ritmoCalculado;
+	private Double tiempoEnHora;
+	private Double tiempoTrasncurrido;
 
 	public Caminador() {
 		super();
@@ -25,21 +26,44 @@ public class Caminador extends Deportista {
 	}
 	
 	
-	@Override 
-	 public Double tiempoTranscurrido (Integer cantidadMovimientos){
+
+	@Override
+	public Double tiempoTrascurrido(Integer cantidadMovimentos) {
+		tiempoTrasncurrido= cantidadMovimentos/60D;
+		tiempoEnHora= tiempoTrasncurrido/60D;
 		
-		tiempoEnHora= getTiempoTranscurrido()/60D;
-		
+					return tiempoEnHora;
+	}
+
+	public Double getDistanciaEnKm() {
+		return distanciaEnKm;
+	}
+
+	public void setDistanciaEnKm(Double distanciaEnKm) {
+		this.distanciaEnKm = distanciaEnKm;
+	}
+
+	public Double getTiempoEnHora() {
 		return tiempoEnHora;
 	}
-	
-	public Double ritmo() {
-		
-		ritmoCalculado = distanciaEnKm/ getTiempoTranscurrido();
-		
-		return ritmoCalculado;
-		
+
+	public void setTiempoEnHora(Double tiempoEnHora) {
+		this.tiempoEnHora = tiempoEnHora;
 	}
+
+	public Double getTiempoTrasncurrido() {
+		return tiempoTrasncurrido;
+	}
+
+	public void setTiempoTrasncurrido(Double tiempoTrasncurrido) {
+		this.tiempoTrasncurrido = tiempoTrasncurrido;
+	}
+	
+	
+	
+	
+	
+	
 	
 	
 	
