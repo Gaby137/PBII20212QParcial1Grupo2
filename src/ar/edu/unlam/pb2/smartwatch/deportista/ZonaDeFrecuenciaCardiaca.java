@@ -1,10 +1,21 @@
 package ar.edu.unlam.pb2.smartwatch.deportista;
 
+import java.util.Objects;
+
 public class ZonaDeFrecuenciaCardiaca {
 	private static final Double KARVONEN_220 = 220.0;
 	private Double frecuenciaCardiacaMin;
 	private Double frecuenciaCardiacaMax;
 	private TipoDeZona tipoZona;
+
+	public ZonaDeFrecuenciaCardiaca(double min, double max, TipoDeZona zona) {
+		this.frecuenciaCardiacaMin = min;
+		this.frecuenciaCardiacaMax = max;
+		this.tipoZona = zona;
+	}
+
+	public ZonaDeFrecuenciaCardiaca() {
+	}
 
 	public TipoDeZona getTipoZona() {
 		return tipoZona;
@@ -14,40 +25,40 @@ public class ZonaDeFrecuenciaCardiaca {
 		this.tipoZona = tipoZona;
 	}
 
-	public void calcularZonaFrecuenciaCardiacaActual(Integer edad, Integer frecuenciaCardiaca) {
-		Double FCMaxPersona = KARVONEN_220 * edad;
+	public void calcularZonaFrecuenciaCardiacaActual(Integer edad, Double fc) {
+		Double FCMaxPersona = KARVONEN_220 - edad;
 
 //		60ppm - 50%  
-		if (frecuenciaCardiaca >= 60 && frecuenciaCardiaca < (FCMaxPersona * 0.5)) {
+		if (fc >= 60 && fc < (FCMaxPersona * 0.5)) {
 			this.tipoZona = TipoDeZona.DESCANSO;
 			this.frecuenciaCardiacaMin = 60.0;
-			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.5) - 1;
+			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.5);
 		}
 //		50% - 60% : es una zona de calentamiento, rehabilitación, acondicionamiento, aeróbico inicial… un ritmo muy fácil.
-		if (frecuenciaCardiaca >= (FCMaxPersona * 0.5) && frecuenciaCardiaca < (FCMaxPersona * 0.6)) {
+		if (fc >= (FCMaxPersona * 0.5) && fc < (FCMaxPersona * 0.6)) {
 			this.tipoZona = TipoDeZona.CALENTAMIENTO;
 			this.frecuenciaCardiacaMin = (FCMaxPersona * 0.5);
-			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.6) - 1;
+			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.6);
 		}
 
 //		60% - 80% : zona de intensidad ligera, ritmo fácil, cómodo, representa un entrenamiento cardiovascular básico, 
 //		pudiendo hablar con comodidad.la zona aeróbica con ritmo moderado en la que se realiza un trabajo de  calidad
 //		para el sistema cardiovascular. Aquí la respiración es agitada y es más complicado mantener una conversación.
-		if (frecuenciaCardiaca >= (FCMaxPersona * 0.6) && frecuenciaCardiaca < (FCMaxPersona * 0.8)) {
+		if (fc >= (FCMaxPersona * 0.6) && fc < (FCMaxPersona * 0.8)) {
 			this.tipoZona = TipoDeZona.AEROBICO;
 			this.frecuenciaCardiacaMin = (FCMaxPersona * 0.6);
-			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.8) - 1;
+			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.8);
 		}
 //		80% - 90%      : terreno de umbral anaeróbico, la intensidad es mayor con el objetivo de mejorar el rendimiento
 //		y la respiración es forzada.
-		if (frecuenciaCardiaca >= (FCMaxPersona * 0.8) && frecuenciaCardiaca < (FCMaxPersona * 0.9)) {
+		if (fc >= (FCMaxPersona * 0.8) && fc < (FCMaxPersona * 0.9)) {
 			this.tipoZona = TipoDeZona.UMBRAL;
 			this.frecuenciaCardiacaMin = (FCMaxPersona * 0.8);
-			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.9) - 1;
+			this.frecuenciaCardiacaMax = (FCMaxPersona * 0.9);
 		}
 
 //		90% - 100%	 :la FCmax del persona segun la edad, la zona de máximo esfuerzo e intensidad que podemos soportar.
-		if (frecuenciaCardiaca >= (FCMaxPersona * 0.9) && frecuenciaCardiaca < FCMaxPersona) {
+		if (fc >= (FCMaxPersona * 0.9) && fc < FCMaxPersona) {
 			this.tipoZona = TipoDeZona.MAXIMO;
 			this.frecuenciaCardiacaMin = (FCMaxPersona * 0.9);
 			this.frecuenciaCardiacaMax = FCMaxPersona;
@@ -73,6 +84,23 @@ public class ZonaDeFrecuenciaCardiaca {
 
 	public void setFrecuenciaCardiacaMax(Double frecuenciaCardiacaMax) {
 		this.frecuenciaCardiacaMax = frecuenciaCardiacaMax;
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(tipoZona);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null)
+			return false;
+		if (getClass() != obj.getClass())
+			return false;
+		ZonaDeFrecuenciaCardiaca other = (ZonaDeFrecuenciaCardiaca) obj;
+		return tipoZona == other.tipoZona;
 	}
 
 }

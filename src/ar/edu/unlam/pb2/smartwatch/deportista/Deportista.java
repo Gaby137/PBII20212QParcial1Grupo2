@@ -1,13 +1,13 @@
 package ar.edu.unlam.pb2.smartwatch.deportista;
 
-public class Deportista {
+public abstract class Deportista {
 	private String nombre;
 	private Integer edadActual;
 	private Double pesoActual;
 	private Double alturaActual;
 	private Integer pasosDiarios;
 	protected Disciplina tipoDeDisciplina;
-
+	
 	public Deportista() {
 
 	}
@@ -21,21 +21,23 @@ public class Deportista {
 		this.pasosDiarios = 0;
 	}
 
-	public Disciplina getTipoDeDisciplina() {
-		return tipoDeDisciplina;
+	
+
+
+//	public abstract Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud);
+	
+
+//	public abstract Double tiempoTrascurrido(Integer cantidadMovimentos);
+
+	public Double distanciaRecorrida(Double double1, Double longitud) {
+		Double resultadoEnKm = (double1 * longitud) / 1000;
+		return resultadoEnKm;
 	}
 
-	public void setTipoDeDisciplina(Disciplina tipoDeDisciplina) {
-		this.tipoDeDisciplina = tipoDeDisciplina;
+	public Double tiempoTrascurrido(Double tiempoEnSeg) {
+		return tiempoEnSeg;
 	}
 
-	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) {
-		return cantidadMovimentos * longitud;
-	}
-
-	public void tiempoTrascurrido() {
-
-	}
 
 	public Double calcularElRitmo() {
 		return 0.0;
@@ -81,6 +83,14 @@ public class Deportista {
 		this.pasosDiarios = pasosDiarios;
 	}
 
+	public Disciplina getTipoDeDisciplina() {
+		return tipoDeDisciplina;
+	}
+
+	public void setTipoDeDisciplina(Disciplina tipoDeDisciplina) {
+		this.tipoDeDisciplina = tipoDeDisciplina;
+	}
+
 	@Override
 	public int hashCode() {
 		final int prime = 31;
@@ -123,6 +133,5 @@ public class Deportista {
 			return false;
 		return true;
 	}
-	
-	
+
 }

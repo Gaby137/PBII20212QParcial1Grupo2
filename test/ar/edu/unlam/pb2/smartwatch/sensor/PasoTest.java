@@ -5,32 +5,29 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
-
-
 public class PasoTest {
 
 	@Test
 	public void pruebaQueDaPasos() {
-		Paso p1 = new Paso(100);
+		Paso p1 = new Paso(100.0);
 		p1.darPaso();
 		assertTrue(p1.isPulso());
 	}
 
 	@Test
 	public void pruebaDeCadenciaYRealiza60Pasos() {
-		Paso p2 = new Paso(100);
+		Paso p2 = new Paso(100.0);
 		for (int i = 0; i < 60; i++) {
 			p2.darPaso();
 		}
-		assertEquals(p2.getCantPasos(), 60,0);	
+		assertEquals(p2.getCantPasos(), 60, 0);
 		assertEquals(p2.getCadencia(), 60, 0);
 	}
 
 	@Test
 	public void pruebaDeCadenciaYRealiza50Pasos() {
 
-		Paso p2 = new Paso(100);
+		Paso p2 = new Paso(100.0);
 		for (int i = 0; i < 50; i++) {
 			p2.darPaso();
 		}
@@ -40,7 +37,7 @@ public class PasoTest {
 
 	@Test
 	public void pruebaQueRecibeUnPulsoDeGPS() {
-		Paso p3 = new Paso(100);
+		Paso p3 = new Paso(100.0);
 		p3.darUnPulsoDeGPS();
 		assertTrue(p3.isPulsoGPS());
 		assertEquals(p3.getMetros(), 1, 0);
