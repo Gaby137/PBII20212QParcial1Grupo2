@@ -1,13 +1,13 @@
-package ar.edu.unlam.pb2.smartwatch;
+package ar.edu.unlam.pb2.smartwatch.sensor;
 
 import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
-class DeportistaTest {
+public class PedaleoTest {
 
 	@Test
-	void test() {
+	public void test() {
 		fail("Not yet implemented");
 	}
 
