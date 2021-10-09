@@ -11,7 +11,6 @@ import ar.edu.unlam.pb2.smartwatch.sensor.Brazada;
 import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
 import ar.edu.unlam.pb2.smartwatch.sensor.Pedaleo;
 
-
 public class mainSmartwatch {
 	static Scanner teclado = new Scanner(System.in);
 
@@ -26,6 +25,8 @@ public class mainSmartwatch {
 				opcionCarrera();
 				break;
 			case 2:
+				
+			
 				opcionCiclismo();
 				break;
 			case 3:
@@ -37,10 +38,25 @@ public class mainSmartwatch {
 			case 9:
 				break;
 			default:
-				System.out.println("Opci髇 Invalida");
+				System.out.println("Opci贸n Invalida");
 				break;
 			}
 		} while (opcion != 9);
+	}
+
+	public static Ciclista crearCiclista() {
+		String nombre="";
+		nombre=teclado.next();
+		Integer edad=0;
+		edad=teclado.nextInt();
+		Double peso=0.0;
+		peso=teclado.nextDouble();
+		Double altura=0.0;
+		altura=teclado.nextDouble();
+		
+		Ciclista ciclista=new Ciclista(nombre,edad,peso,altura);
+		
+		return ciclista;
 	}
 
 	public static void opcionCarrera() {
@@ -85,7 +101,7 @@ public class mainSmartwatch {
 		case 9:
 			break;
 		default:
-			System.out.println("Opci髇 Invalida");
+			System.out.println("Opci贸n Invalida");
 			break;
 		}*/
 	}
@@ -133,7 +149,7 @@ public class mainSmartwatch {
 		case 9:
 			break;
 		default:
-			System.out.println("Opci髇 Invalida");
+			System.out.println("Opci贸n Invalida");
 			break;
 		}*/
 	}
@@ -177,7 +193,7 @@ public class mainSmartwatch {
 		case 9:
 			break;
 		default:
-			System.out.println("Opci髇 Invalida");
+			System.out.println("Opci贸n Invalida");
 			break;
 		}*/
 	}
@@ -218,7 +234,7 @@ public class mainSmartwatch {
 		case 9:
 			break;
 		default:
-			System.out.println("Opci髇 Invalida");
+			System.out.println("Opci贸n Invalida");
 			break;
 		}*/
 	}
@@ -240,6 +256,7 @@ public class mainSmartwatch {
 	}
 
 	private static Integer menuCiclista() {
+		crearCiclista();
 		int opcionSeleccionada = 0;
 		System.out.println("************************");
 		/*System.out.println("Ciclista -- Elija una opcion\n");

@@ -4,9 +4,9 @@ public abstract class Sensor {
 	// la velocidad es metros/segundos
 	private Double velocidad;
 	private Double cadencia;
-	private Integer frecuenciaCardiaca;
-	private Integer tiempoSeg;
-	private Integer metros;
+	private Double frecuenciaCardiaca;
+	private Double tiempoSeg;
+	private Double metros;
 	private Boolean pulso;
 	private Boolean pulsoGPS;
 
@@ -14,13 +14,13 @@ public abstract class Sensor {
 
 	}
 
-	public Sensor(Integer frecuenciaCardiaca) {
+	public Sensor(Double frecuenciaCardiaca) {
 		super();
 		this.velocidad = 0.0;
 		this.cadencia = 0.0;
 		this.frecuenciaCardiaca = frecuenciaCardiaca;
-		this.tiempoSeg = 0;
-		this.metros = 0;
+		this.tiempoSeg = 0.0;
+		this.metros = 0.0;
 		this.pulso = false;
 		this.pulsoGPS = false;
 	}
@@ -33,10 +33,7 @@ public abstract class Sensor {
 		return this.cadencia;
 	}
 
-	public void darUnPulsoDeGPS() {
-		this.pulsoGPS = true;
-		this.metros++;
-	}
+	public abstract void darUnPulsoDeGPS();
 
 	public void recibirUnPulso() {
 		if (this.isPulso()) {
@@ -67,27 +64,27 @@ public abstract class Sensor {
 		this.cadencia = cadencia;
 	}
 
-	public Integer getFrecuenciaCardiaca() {
+	public Double getFrecuenciaCardiaca() {
 		return frecuenciaCardiaca;
 	}
 
-	public void setFrecuenciaCardiaca(Integer frecuenciaCardiaca) {
+	public void setFrecuenciaCardiaca(Double frecuenciaCardiaca) {
 		this.frecuenciaCardiaca = frecuenciaCardiaca;
 	}
 
-	public Integer getTiempoSeg() {
+	public Double getTiempoSeg() {
 		return tiempoSeg;
 	}
 
-	public void setTiempoSeg(Integer tiempoSeg) {
+	public void setTiempoSeg(Double tiempoSeg) {
 		this.tiempoSeg = tiempoSeg;
 	}
 
-	public Integer getMetros() {
+	public Double getMetros() {
 		return metros;
 	}
 
-	public void setMetros(Integer metros) {
+	public void setMetros(Double metros) {
 		this.metros = metros;
 	}
 

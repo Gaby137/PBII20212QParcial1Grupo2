@@ -4,7 +4,7 @@ public class Brazada extends Sensor {
 	public static final Double LONGITUD_DE_BRAZADA = 1D;
 	private Integer contBrazada;
 
-	public Brazada(Integer frecuenciaCardiaca) {
+	public Brazada(Double frecuenciaCardiaca) {
 		super(frecuenciaCardiaca);
 		this.contBrazada = 0;
 	}
@@ -26,6 +26,7 @@ public class Brazada extends Sensor {
 		return resultado;
 	}
 
+
 	public Integer getContBrazada() {
 		return contBrazada;
 	}
@@ -34,5 +35,12 @@ public class Brazada extends Sensor {
 		this.contBrazada = contBrazada;
 	}
 	
+
+	@Override
+	public void darUnPulsoDeGPS() {
+		// TODO Auto-generated method stub
+
+	}
+
 
 }

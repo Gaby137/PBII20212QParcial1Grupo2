@@ -17,7 +17,7 @@ public class DeportistaTest {
 
 		final Integer PASOS_DE_PRUEBA = 10;
 
-		Paso senorDePasos = new Paso(100);
+		Paso senorDePasos = new Paso(100.0);
 		for (int i = 0; i < PASOS_DE_PRUEBA; i++) {
 			senorDePasos.darPaso();
 		}
