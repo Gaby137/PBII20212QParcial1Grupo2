@@ -1,17 +1,13 @@
 package ar.edu.unlam.pb2.smartwatch.deportista;
 
-public class Deportista {
+public abstract class Deportista {
 	private String nombre;
 	private Integer edadActual;
 	private Double pesoActual;
 	private Double alturaActual;
 	private Integer pasosDiarios;
 	protected Disciplina tipoDeDisciplina;
-	private Double tiempoTranscurrido;
-
-	public Deportista() {
-
-	}
+	
 
 	public Deportista(String nombre, Integer edadActual, Double pesoActual, Double alturaActual) {
 		super();
@@ -22,24 +18,13 @@ public class Deportista {
 		this.pasosDiarios = 0;
 	}
 
-	public Disciplina getTipoDeDisciplina() {
-		return tipoDeDisciplina;
-	}
+	
 
-	public void setTipoDeDisciplina(Disciplina tipoDeDisciplina) {
-		this.tipoDeDisciplina = tipoDeDisciplina;
-	}
+	public abstract Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud);
+	
 
-	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) { //esto devuelve la distancia en mts;
-		return cantidadMovimentos * longitud;
-	}
+	public abstract Double tiempoTrascurrido(Integer cantidadMovimentos);
 
-	public Double tiempoTrascurrido(Integer cantidadMovimientos) {
-		 tiempoTranscurrido=cantidadMovimientos/60D;
-			
-		 return  tiempoTranscurrido;
-
-	}
 
 	public Double calcularElRitmo() {
 		return 0.0;
@@ -84,49 +69,13 @@ public class Deportista {
 	public void setPasosDiarios(Integer pasosDiarios) {
 		this.pasosDiarios = pasosDiarios;
 	}
-
-	@Override
-	public int hashCode() {
-		final int prime = 31;
-		int result = 1;
-		result = prime * result + ((alturaActual == null) ? 0 : alturaActual.hashCode());
-		result = prime * result + ((edadActual == null) ? 0 : edadActual.hashCode());
-		result = prime * result + ((nombre == null) ? 0 : nombre.hashCode());
-		result = prime * result + ((pesoActual == null) ? 0 : pesoActual.hashCode());
-		return result;
+	public Disciplina getTipoDeDisciplina() {
+		return tipoDeDisciplina;
 	}
 
-	@Override
-	public boolean equals(Object obj) {
-		if (this == obj)
-			return true;
-		if (obj == null)
-			return false;
-		if (getClass() != obj.getClass())
-			return false;
-		Deportista other = (Deportista) obj;
-		if (alturaActual == null) {
-			if (other.alturaActual != null)
-				return false;
-		} else if (!alturaActual.equals(other.alturaActual))
-			return false;
-		if (edadActual == null) {
-			if (other.edadActual != null)
-				return false;
-		} else if (!edadActual.equals(other.edadActual))
-			return false;
-		if (nombre == null) {
-			if (other.nombre != null)
-				return false;
-		} else if (!nombre.equals(other.nombre))
-			return false;
-		if (pesoActual == null) {
-			if (other.pesoActual != null)
-				return false;
-		} else if (!pesoActual.equals(other.pesoActual))
-			return false;
-		return true;
+	public void setTipoDeDisciplina(Disciplina tipoDeDisciplina) {
+		this.tipoDeDisciplina = tipoDeDisciplina;
 	}
-	
+
 	
 }
