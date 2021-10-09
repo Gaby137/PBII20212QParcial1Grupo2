@@ -2,11 +2,11 @@ package ar.edu.unlam.pb2.smartwatch.sensor;
 
 public class Brazada extends Sensor {
 	public static final Double LONGITUD_DE_BRAZADA = 1D;
-	private Integer contBrazada;
+	private Double contBrazada;
 
 	public Brazada(Double frecuenciaCardiaca) {
 		super(frecuenciaCardiaca);
-		this.contBrazada = 0;
+		this.contBrazada = 0.0;
 	}
 
 	public void darUnaBrazada() {
@@ -26,21 +26,18 @@ public class Brazada extends Sensor {
 		return resultado;
 	}
 
-
-	public Integer getContBrazada() {
+	public Double getContBrazada() {
 		return contBrazada;
 	}
 
-	public void setContBrazada(Integer contBrazada) {
+	public void setContBrazada(Double contBrazada) {
 		this.contBrazada = contBrazada;
 	}
-	
 
 	@Override
 	public void darUnPulsoDeGPS() {
 		// TODO Auto-generated method stub
 
 	}
-
 
 }

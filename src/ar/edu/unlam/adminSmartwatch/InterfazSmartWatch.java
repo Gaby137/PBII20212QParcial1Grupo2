@@ -4,6 +4,7 @@ import java.util.Scanner;
 
 import ar.edu.unlam.pb2.smartwatch.deportista.Deportista;
 import ar.edu.unlam.pb2.smartwatch.deportista.Disciplina;
+import ar.edu.unlam.pb2.smartwatch.deportista.Runner;
 
 public class InterfazSmartWatch {
 
@@ -11,7 +12,7 @@ public class InterfazSmartWatch {
 
 		Scanner teclado = new Scanner(System.in);
 		Integer opcionDeseada = 0;
-		Deportista actual = new Deportista();
+		Runner actual = new Runner();
 
 		do {
 			mostrarMenuInicial(teclado, actual);

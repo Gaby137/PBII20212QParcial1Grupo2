@@ -1,11 +1,11 @@
 package ar.edu.unlam.pb2.smartwatch.deportista;
 
 public class Nadador extends Deportista {
-	
+
 	private Double distanciaEnMts;
-	private Double tiempoTranscurrido; 
+	private Double tiempoTranscurrido;
 	private Double ritmoCalculado;
-	
+
 	public Nadador() {
 		super();
 	}
@@ -15,30 +15,29 @@ public class Nadador extends Deportista {
 		setTipoDeDisciplina(Disciplina.NATACION);
 	}
 
-	
 	@Override
-	public Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud) {
-		
-		distanciaEnMts= cantidadMovimentos*longitud;
-		
+	public Double distanciaRecorrida(Double cantidadMovimentos, Double longitud) {
+
+		distanciaEnMts = cantidadMovimentos * longitud;
+
 		return distanciaEnMts;
 	}
 
 	@Override
-	public Double tiempoTrascurrido(Integer cantidadMovimentos) {
-		
-		tiempoTranscurrido= cantidadMovimentos/60D;
-		
+	public Double tiempoTrascurrido(Double cantidadMovimentos) {
+
+		tiempoTranscurrido = cantidadMovimentos / 60D;
+
 		return tiempoTranscurrido;
 	}
-	
+
 	@Override
 	public Double calcularElRitmo() {
-	
-		ritmoCalculado=distanciaEnMts/tiempoTranscurrido;
-		
+
+		ritmoCalculado = distanciaEnMts / tiempoTranscurrido;
+
 		return ritmoCalculado;
-		
+
 	}
 
 	public Double getDistanciaEnMts() {
@@ -65,4 +64,3 @@ public class Nadador extends Deportista {
 		this.ritmoCalculado = ritmoCalculado;
 	}
 }
-

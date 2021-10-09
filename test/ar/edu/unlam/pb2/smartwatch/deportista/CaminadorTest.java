@@ -1,13 +1,13 @@
 package ar.edu.unlam.pb2.smartwatch.deportista;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
 
 import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
 
-public class TestCaminador {
-	
+public class CaminadorTest {
+
 	@Test
 	public void queSePuedaInstanciarUnCaminador() {
 
@@ -30,16 +30,16 @@ public class TestCaminador {
 
 		// preparacion
 		Caminador usuario = new Caminador();
-		Paso sensorDePasos = new Paso(100);
-		
+		Paso sensorDePasos = new Paso(100.0);
+
 		final Integer PASOS_DE_PRUEBA = 1850;
-		
+
 		for (int i = 0; i < PASOS_DE_PRUEBA; i++) {
 			sensorDePasos.darPaso();
 		}
 		// valor esperado
 
-		final Double RESULTADO_ESPERADO = 1.27; //en KM 
+		final Double RESULTADO_ESPERADO = 1.27; // en KM
 
 		// ejecucion
 
@@ -50,30 +50,29 @@ public class TestCaminador {
 		assertEquals(RESULTADO_ESPERADO, valorObtenido, 0.01);
 
 	}
-	
-	@Test 
+
+	@Test
 	public void queSePuedaCalcularTiempoTranscurridoNadador() {
 		// preparacion
-				Caminador usuario = new Caminador();
+		Caminador usuario = new Caminador();
 
-				final Integer PASOS_DE_PRUEBA = 4500;
+		final Integer PASOS_DE_PRUEBA = 4500;
 
-				Paso sensorDePasos = new Paso(100);
-				for (int i = 0; i < PASOS_DE_PRUEBA; i++) {
-					sensorDePasos.darPaso();
-				}
+		Paso sensorDePasos = new Paso(100.0);
+		for (int i = 0; i < PASOS_DE_PRUEBA; i++) {
+			sensorDePasos.darPaso();
+		}
 		// valor esperado distancia en metros
 
-				final Double RESULTADO_ESPERADO =1.25;
+		final Double RESULTADO_ESPERADO = 1.25;
 
 		// ejecucion
 
-				Double valorObtenido = usuario.tiempoTrascurrido(sensorDePasos.getCantPasos());
+		Double valorObtenido = usuario.tiempoTrascurrido(sensorDePasos.getCantPasos());
 
 		// validacion
 
-				assertEquals(RESULTADO_ESPERADO, valorObtenido, 0.01);
+		assertEquals(RESULTADO_ESPERADO, valorObtenido, 0.01);
 	}
 
 }
-

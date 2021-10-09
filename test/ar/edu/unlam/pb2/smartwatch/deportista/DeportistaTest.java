@@ -13,7 +13,7 @@ public class DeportistaTest {
 	public void queSePuedaCalcularDistanciaEnMetros() {
 
 		// preparacion
-		Deportista usuario = new Deportista();
+		Runner usuario = new Runner();
 
 		final Integer PASOS_DE_PRUEBA = 10;
 
@@ -111,7 +111,7 @@ public class DeportistaTest {
 
 		Ciclista ciclista = new Ciclista("Lance", 35, 75.80, 177.4);
 
-		Pedaleo p1 = new Pedaleo(100);
+		Pedaleo p1 = new Pedaleo(100.0);
 
 		for (int i = 0; i < PEDALEOS; i++) {
 			p1.darUnPedaleo();

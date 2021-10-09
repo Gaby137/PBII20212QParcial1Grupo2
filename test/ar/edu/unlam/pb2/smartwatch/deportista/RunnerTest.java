@@ -6,11 +6,11 @@ import org.junit.Test;
 
 import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
 
-public class CorredorTest {
+public class RunnerTest {
 
 	/*
-	 * Los deportistas que sean corredores, desean conocer en tiempo real la
-	 * siguiente información: // - Distancia recorrida (en kilómetros) // - Tiempo
+	 * Los Runners que sean corredores, desean conocer en tiempo real la siguiente
+	 * información: // - Distancia recorrida (en kilómetros) // - Tiempo
 	 * transcurrido // - Ritmo (minutos que se demora en completar un kilómetro) //
 	 * - Zona de frecuencia cardíaca actual (*) Obviamente para poder calcular la
 	 * zona de frecuencia cardíaca, será necesario conocer los límites de cada zona
@@ -18,7 +18,7 @@ public class CorredorTest {
 	 */
 	@Test
 	public void comprobarLaDistanciaDelCorredor() {
-		Deportista d1 = new Deportista("corredor", 18, 70.0, 1.70);
+		Runner d1 = new Runner("corredor", 18, 70.0, 1.70);
 
 		Paso p1 = new Paso(170.0);
 		for (int i = 0; i < 100; i++) {
@@ -34,7 +34,7 @@ public class CorredorTest {
 
 	@Test
 	public void comprobarTiempoTranscurrido() {
-		Deportista d2 = new Deportista("corredor", 18, 70.0, 1.70);
+		Runner d2 = new Runner("corredor", 18, 70.0, 1.70);
 
 		Paso p2 = new Paso(170.0);
 		for (int i = 0; i < 100; i++) {
@@ -47,7 +47,7 @@ public class CorredorTest {
 
 	@Test
 	public void comprobarElRitmoAlCompletarUnKm() {
-		Deportista d3 = new Deportista("corredor", 18, 70.0, 1.70);
+		Runner d3 = new Runner("corredor", 18, 70.0, 1.70);
 
 		Paso p3 = new Paso(170.0);
 
