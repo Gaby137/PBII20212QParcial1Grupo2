@@ -6,6 +6,9 @@ import ar.edu.unlam.pb2.smartwatch.deportista.Caminador;
 import ar.edu.unlam.pb2.smartwatch.deportista.Ciclista;
 import ar.edu.unlam.pb2.smartwatch.deportista.Nadador;
 import ar.edu.unlam.pb2.smartwatch.deportista.Runner;
+import ar.edu.unlam.pb2.smartwatch.sensor.Brazada;
+import ar.edu.unlam.pb2.smartwatch.sensor.Paso;
+import ar.edu.unlam.pb2.smartwatch.sensor.Pedaleo;
 
 public class InterfazSmartWatch {
 
@@ -33,11 +36,12 @@ public class InterfazSmartWatch {
 
 			mostrarOpciones();
 			opcionDeseada = teclado.nextInt();
+			Runner runner = null;
 
 			switch (opcionDeseada) {
 
 			case 1:
-				Runner runner = new Runner(nombre, edadActual, pesoActual, alturaActual);
+				runner = new Runner(nombre, edadActual, pesoActual, alturaActual);
 				break;
 			case 2:
 				Ciclista ciclista = new Ciclista(nombre, edadActual, pesoActual, alturaActual);
@@ -49,13 +53,18 @@ public class InterfazSmartWatch {
 				Caminador caminador = new Caminador(nombre, edadActual, pesoActual, alturaActual);
 				break;
 			case 5:
-//				darPaso();
+
+				if (runner != null) {
+					Paso p = new Paso(100.0);
+					System.out.println(runner.distanciaRecorrida(p.getCantPasos(), p.LONGITUD_DE_UN_PASO));
+				}
+
 				break;
 			case 6:
-
+				Brazada b = new Brazada(100.0);
 				break;
 			case 7:
-
+				Pedaleo p2 = new Pedaleo(100.0);
 				break;
 			default:
 				break;
