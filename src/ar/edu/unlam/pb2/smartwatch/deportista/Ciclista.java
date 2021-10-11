@@ -17,41 +17,43 @@ public class Ciclista extends Deportista {
 		return zonaDeFrecuenciaCardiacaActual;
 	}
 
+	public Double velocidad(Double distanciaEnKm, Double tiempoEnSegundos) {
+		Double velocidadTotal = 0.0;
+		Double tiempoEnHoras = 0.0;
 
-	public Double velocidad(Double distanciaEnKm,Double tiempoEnSegundos) {
-		Double velocidadTotal=0.0;
-		Double tiempoEnHoras=0.0;
-		
-		tiempoEnHoras=tiempoEnSegundos/3600.0;
-		
-		velocidadTotal=distanciaEnKm/tiempoEnHoras;
-		
+		tiempoEnHoras = tiempoEnSegundos / 3600.0;
+
+		velocidadTotal = distanciaEnKm / tiempoEnHoras;
+
 		return velocidadTotal;
 	}
+
 	public Double cadencia(Double pedaleadas, Double tiempoEnSegundos) {
-		Double tiempoEnMinutos=0.0;
-		Double cadenciaEnRPM=0.0;
-		
-		tiempoEnMinutos=tiempoEnSegundos/60.0;
-		
-		cadenciaEnRPM=pedaleadas*tiempoEnMinutos;
-		
+		Double tiempoEnMinutos = 0.0;
+		Double cadenciaEnRPM = 0.0;
+
+		tiempoEnMinutos = tiempoEnSegundos / 60.0;
+
+		cadenciaEnRPM = pedaleadas * tiempoEnMinutos;
+
 		return cadenciaEnRPM;
 	}
-	
+
 	public ZonaDeFrecuenciaCardiaca getZonaDeFrecuenciaCardiacaActual(Double fc) {
 		this.zonaDeFrecuenciaCardiacaActual.calcularZonaFrecuenciaCardiacaActual(super.getEdadActual(), fc);
 		return this.zonaDeFrecuenciaCardiacaActual;
 	}
-	
+
 	public void setZonaDeFrecuenciaCardiacaActual(ZonaDeFrecuenciaCardiaca zonaDeFrecuenciaCardiacaActual) {
 		this.zonaDeFrecuenciaCardiacaActual = zonaDeFrecuenciaCardiacaActual;
 	}
+
 	public Double velocidad() {
 		return 0.0;
 	}
+
 	public Double cadencia() {
 		return 0.0;
 	}
-	
+
 }
