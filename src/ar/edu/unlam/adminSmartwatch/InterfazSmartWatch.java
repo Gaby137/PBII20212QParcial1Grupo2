@@ -76,10 +76,13 @@ public class InterfazSmartWatch {
 		System.out.println("* Hola *\n");
 		System.out.println("*****************************");
 		System.out.println("¿Que deporte va a realizar hoy?");
-		System.out.println("1 - Running");
+		System.out.println("1 - Corredor");
 		System.out.println("2 - Ciclismo");
 		System.out.println("3 - Natación");
-		System.out.println("4 - Footing ");
+		System.out.println("4 - Caminador ");
+		System.out.println("5 - Dar paso ");
+		System.out.println("6 - Dar Brazada ");
+		System.out.println("7 - Dar pedaleo ");
 		System.out.println("9 - Salir");
 		System.out.println("*****************************");
 		System.out.println("Ingrese una opcion");
