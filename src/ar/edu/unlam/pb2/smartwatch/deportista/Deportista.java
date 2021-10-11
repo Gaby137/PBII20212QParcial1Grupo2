@@ -7,7 +7,7 @@ public abstract class Deportista {
 	private Double alturaActual;
 	private Integer pasosDiarios;
 	protected Disciplina tipoDeDisciplina;
-	
+
 	public Deportista() {
 
 	}
@@ -21,11 +21,7 @@ public abstract class Deportista {
 		this.pasosDiarios = 0;
 	}
 
-	
-
-
 //	public abstract Double distanciaRecorrida(Integer cantidadMovimentos, Double longitud);
-	
 
 //	public abstract Double tiempoTrascurrido(Integer cantidadMovimentos);
 
@@ -37,7 +33,6 @@ public abstract class Deportista {
 	public Double tiempoTrascurrido(Double tiempoEnSeg) {
 		return tiempoEnSeg;
 	}
-
 
 	public Double calcularElRitmo() {
 		return 0.0;
@@ -132,6 +127,13 @@ public abstract class Deportista {
 		} else if (!pesoActual.equals(other.pesoActual))
 			return false;
 		return true;
+	}
+
+	@Override
+	public String toString() {
+		return "Deportista [nombre=" + nombre + ", edadActual=" + edadActual + ", pesoActual=" + pesoActual
+				+ ", alturaActual=" + alturaActual + ", pasosDiarios=" + pasosDiarios + ", tipoDeDisciplina="
+				+ tipoDeDisciplina + "]";
 	}
 
 }

@@ -2,8 +2,9 @@ package ar.edu.unlam.adminSmartwatch;
 
 import java.util.Scanner;
 
-import ar.edu.unlam.pb2.smartwatch.deportista.Deportista;
-import ar.edu.unlam.pb2.smartwatch.deportista.Disciplina;
+import ar.edu.unlam.pb2.smartwatch.deportista.Caminador;
+import ar.edu.unlam.pb2.smartwatch.deportista.Ciclista;
+import ar.edu.unlam.pb2.smartwatch.deportista.Nadador;
 import ar.edu.unlam.pb2.smartwatch.deportista.Runner;
 
 public class InterfazSmartWatch {
@@ -12,50 +13,11 @@ public class InterfazSmartWatch {
 
 		Scanner teclado = new Scanner(System.in);
 		Integer opcionDeseada = 0;
-		Runner actual = new Runner();
 
-		do {
-			mostrarMenuInicial(teclado, actual);
-
-			mostrarOpciones();
-			opcionDeseada = teclado.nextInt();
-
-			switch (opcionDeseada) {
-
-			case 1:
-				actual.setTipoDeDisciplina(Disciplina.CARRERA);
-				break;
-			case 2:
-				actual.setTipoDeDisciplina(Disciplina.CICLISMO);
-				break;
-			case 3:
-				actual.setTipoDeDisciplina(Disciplina.NATACION);
-				break;
-			case 4:
-				actual.setTipoDeDisciplina(Disciplina.CAMINATA);
-				break;
-			default:
-				break;
-
-			}
-
-		} while (opcionDeseada != 9);
-
-	}
-
-	private static void mostrarMenuInicial(Scanner teclado, Deportista actual) {
-		System.out.println("Bienvenido a su SmartWatch\n");
-		System.out.println("******Configure su SmartWatch*****");
-
-		generarUsuario(teclado);
-
-	}
-
-	private static void generarUsuario(Scanner teclado) {
 		String nombre;
 		Integer edadActual;
 		Double pesoActual, alturaActual;
-		Deportista nuevo;
+
 		System.out.println("*****************************");
 		System.out.println("**Complete con sus datos: **");
 		System.out.println(" Ingrese su nombre:");
@@ -67,7 +29,40 @@ public class InterfazSmartWatch {
 		System.out.println("Ingrese su altura actual: ");
 		alturaActual = teclado.nextDouble();
 
-//		 nuevo = new Deportista(nombre,edadActual,pesoActual,alturaActual);
+		do {
+
+			mostrarOpciones();
+			opcionDeseada = teclado.nextInt();
+
+			switch (opcionDeseada) {
+
+			case 1:
+				Runner runner = new Runner(nombre, edadActual, pesoActual, alturaActual);
+				break;
+			case 2:
+				Ciclista ciclista = new Ciclista(nombre, edadActual, pesoActual, alturaActual);
+				break;
+			case 3:
+				Nadador nadador = new Nadador(nombre, edadActual, pesoActual, alturaActual);
+				break;
+			case 4:
+				Caminador caminador = new Caminador(nombre, edadActual, pesoActual, alturaActual);
+				break;
+			case 5:
+//				darPaso();
+				break;
+			case 6:
+
+				break;
+			case 7:
+
+				break;
+			default:
+				break;
+
+			}
+
+		} while (opcionDeseada != 9);
 
 	}
 
@@ -76,10 +71,13 @@ public class InterfazSmartWatch {
 		System.out.println("* Hola *\n");
 		System.out.println("*****************************");
 		System.out.println("¿Que deporte va a realizar hoy?");
-		System.out.println("1 - Running");
+		System.out.println("1 - Corredor");
 		System.out.println("2 - Ciclismo");
 		System.out.println("3 - Natación");
-		System.out.println("4 - Footing ");
+		System.out.println("4 - Caminador ");
+		System.out.println("5 - Dar paso ");
+		System.out.println("6 - Dar brazada ");
+		System.out.println("7 - Dar pedaleo ");
 		System.out.println("9 - Salir");
 		System.out.println("*****************************");
 		System.out.println("Ingrese una opcion");
